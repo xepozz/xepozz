@@ -1,5 +1,11 @@
 ### Hi there 👋
 
+My name is Dmitry. 
+
+Currently I'm living in Voronezh, Russian Federation.
+
+I like to contribute any open source project. Currently I prefer [Yii 3](https://github.com/yiisoft).
+
 <!--
 **xepozz/xepozz** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
