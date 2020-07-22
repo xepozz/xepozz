@@ -22,6 +22,9 @@ angular
                         const post = createPostFromIssue(response.data);
                         console.log(response.data)
                         console.log(post)
+                        if (!('published' in post.tags)) {
+                            return null
+                        }
 
                         return post
                     })
@@ -38,8 +41,9 @@ angular
                 if (filter.offset) {
                     url += '&page=' + filter.offset
                 }
+                url += '&labels=published'
                 if (filter.tag) {
-                    url += '&labels=' + filter.tag
+                    url += ',' + filter.tag
                 }
                 console.log(url)
                 return $http
