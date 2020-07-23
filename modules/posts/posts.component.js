@@ -1,5 +1,5 @@
 angular
-    .module('posts', ['postModule'])
+    .module('posts', ['postModule', 'emptyPostsModule'])
     .component('posts', {
         templateUrl: 'modules/posts/posts.template.html',
         bindings:{
@@ -18,7 +18,6 @@ angular
                 this.loadNextPage()
             }
             this.loadNextPage = function () {
-                console.log('Load page', this.currentPage)
                 const filter = new PostRepositoryFilter(this.pageSize, this.currentPage, this.tag)
                 $q
                     .resolve(PostRepository.getByFilter(filter))

@@ -1,13 +1,8 @@
 angular
-    .module('app', ['ngStorage', 'posts', 'authorizationModule'])
-    .config(function ($provide) {
-        $provide.constant('BASE_API_URL', 'https://api.github.com/repos/xepozz/xepozz')
-    })
-    .factory('Base64Encoder', function () {
-        return {
-            encode: (value) => btoa(unescape(encodeURIComponent(value))),
-            decode: (value) => decodeURIComponent(escape(atob(value))),
-        }
+    .module('app', ['config', 'spinnerModule', 'ngStorage', 'posts', 'authorizationModule'])
+    .config(function ($provide, $logProvider, DEBUG_ENABLED, REPOSITORY_NAME) {
+        $logProvider.debugEnabled(DEBUG_ENABLED)
+        $provide.constant('BASE_API_URL', 'https://api.github.com/repos/' + REPOSITORY_NAME)
     })
     .directive('main', function () {
         return {
