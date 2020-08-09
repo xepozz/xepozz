@@ -6,62 +6,93 @@ angular
                 template: '<post post="$resolve.post"></post>',
                 resolve: {
                     post: function (PostRepository, $route) {
-                        return PostRepository.getById($route.current.params.id);
+                        post = PostRepository.getById($route.current.params.id);
+                        return post
                     },
                 }
             })
         ;
     })
-    .factory('PostRepository', function ($http, $log, BASE_API_URL, POST_REQUIRED_TAGS) {
+    .factory('PostFactory', function (POST_REQUIRED_TAGS) {
+        function createFromIssue(issue) {
+            const author = new Author(issue.user.login, issue.user.html_url, issue.user.avatar_url);
+            let tags = issue.labels.map((label) => label.name);
+
+            if (!tags.includesArray(POST_REQUIRED_TAGS)) {
+                throw new Error("You can't see unpublished posts.")
+            }
+            tags = tags.filter(n => !POST_REQUIRED_TAGS.includes(n))
+
+            return new Post(issue.number, issue.title, issue.body_html, author, tags, issue.comments, issue.created_at);
+        }
+
+        function createFromIssueList(issueList) {
+            return issueList.map(issue => createFromIssue(issue))
+        }
+
+        return {
+            createFromIssue: createFromIssue,
+            createFromIssueList: createFromIssueList,
+        }
+    })
+    .factory('PostRepository', function ($http, $log, PostFactory, PromiseCacheService, $q, BASE_API_URL, POST_REQUIRED_TAGS) {
         return {
             getReactionCounters: async (id) => {
-                return $http
-                    .get(`${BASE_API_URL}/issues/${id}/reactions`, {
-                        headers: {
-                            Accept: 'application/vnd.github.squirrel-girl-preview+json',
-                        }
-                    })
-                    .then(response => {
-                        $log.debug('response', response.config.url, response.data)
-                        let reactionCounters = {
-                            '+1': 0,
-                            '-1': 0,
-                            'laugh': 0,
-                            'confused': 0,
-                            'heart': 0,
-                            'hooray': 0,
-                            'rocket': 0,
-                            'eyes': 0,
-                        }
-                        response.data.map(data => {
-                            const emoji = data.content;
-                            if (reactionCounters.hasOwnProperty(emoji)) {
-                                reactionCounters[emoji]++
-                            }
+                id = Number(id)
+                const cacheKey = 'reactions-id-' + id;
+                return PromiseCacheService.getOrSet(
+                    cacheKey,
+                    () => $http
+                        .get(`${BASE_API_URL}/issues/${id}/reactions`, {
+                            headers: {
+                                Accept: 'application/vnd.github.squirrel-girl-preview+json',
+                            },
+                            cache: true,
                         })
+                        .then(response => {
+                            $log.debug('response', response.config.url, response.data)
+                            let reactionCounters = {
+                                '+1': 0,
+                                '-1': 0,
+                                'laugh': 0,
+                                'confused': 0,
+                                'heart': 0,
+                                'hooray': 0,
+                                'rocket': 0,
+                                'eyes': 0,
+                            }
+                            response.data.map(data => {
+                                const emoji = data.content;
+                                if (reactionCounters.hasOwnProperty(emoji)) {
+                                    reactionCounters[emoji]++
+                                }
+                            })
 
-                        const arguments = Object.entries(reactionCounters).map(property => property[1]);
-                        return ReactionCounters.apply(null, arguments);
-                    })
+                            const arguments = Object.entries(reactionCounters).map(property => property[1]);
+                            return ReactionCounters.apply(null, arguments)
+                        })
+                )
             },
             getById: async (id) => {
                 id = Number(id)
-                return $http
-                    .get(`${BASE_API_URL}/issues/${id}?state=open`, {
-                        headers:{
-                            Accept: 'application/vnd.github.VERSION.html+json'
-                        }
-                    })
-                    .then(response => {
-                        $log.debug('response', response.config.url, response.data)
-                        const post = createPostFromIssue(response.data);
-                        $log.debug('post', post)
-                        if (!post.tags.includesArray(POST_REQUIRED_TAGS)) {
-                            throw new Error("You can't see unpublished posts.")
-                        }
-
-                        return post
-                    })
+                const cacheKey = 'post-id-' + id;
+                return PromiseCacheService.getOrSet(
+                    cacheKey,
+                    () => $http
+                        .get(`${BASE_API_URL}/issues/${id}?state=open`, {
+                            headers: {
+                                Accept: 'application/vnd.github.VERSION.html+json'
+                            },
+                            cache: true,
+                        })
+                        .then(response => {
+                            $log.debug('response', response.config.url, response.data)
+                            const post = PostFactory.createFromIssue(response.data);
+                            $log.debug('post', post)
+                            return post
+                        }),
+                    '2hours'
+                )
             },
             getByFilter: async (filter) => {
                 let url = `${BASE_API_URL}/issues`;
@@ -79,19 +110,25 @@ angular
                 if (filter.tag) {
                     url += ',' + filter.tag
                 }
-                return $http
-                    .get(url, {
-                        headers:{
-                            Accept: 'application/vnd.github.VERSION.html+json'
-                        }
-                    })
-                    .then(response => {
-                        $log.debug('response', response.config.url, response.data)
-                        const posts = createPostsFromIssueList(response.data);
-                        $log.debug('posts', posts)
+                const cacheKey = 'posts-filter-' + Object.values(filter).join('-')
+                return PromiseCacheService.getOrSet(
+                    cacheKey,
+                    () => $http
+                        .get(url, {
+                            headers: {
+                                Accept: 'application/vnd.github.VERSION.html+json'
+                            },
+                            cache: true,
+                        })
+                        .then(response => {
+                            $log.debug('response', response.config.url, response.data)
+                            const posts = PostFactory.createFromIssueList(response.data);
+                            $log.debug('posts', posts)
 
-                        return posts
-                    })
+                            return posts
+                        }),
+                    '4hours'
+                )
             }
         };
     })
@@ -139,15 +176,4 @@ function Author(username, url, avatarUrl) {
         url: url,
         avatarUrl: avatarUrl,
     }
-}
-
-function createPostsFromIssueList(issueList) {
-    return issueList.map(issue => createPostFromIssue(issue))
-}
-
-function createPostFromIssue(issue) {
-    const author = new Author(issue.user.login, issue.user.html_url, issue.user.avatar_url);
-    const tags = issue.labels.map((label) => label.name);
-
-    return new Post(issue.number, issue.title, issue.body_html, author, tags, issue.comments, issue.created_at)
 }
