@@ -4,12 +4,15 @@ My name is Dmitry.
 
 Currently, I'm living in Voronezh, Russian Federation 🇷🇺.
 
-I like to contribute into open source project at free time. Currently, I prefer [Yii 3](https://github.com/yiisoft).
+I like to contribute to open source projects at my free time. Now I prefer [Yii 3](https://github.com/yiisoft).
 
-I want to start blogging 📝 and 
-that's why I came up with my own CMS based on Github and Github Pages.
+### Projects
 
-🤔 I'm looking for help with developing CMS so if you want to contribute you are welcome to https://github.com/xepozz/blogit 
+#### Blogit
+
+I want to start writing useful articles 📝 and that's why I developed CMS based on Github Pages.
+
+🤔 I'm looking for help with developing CMS so if you want to contribute, you are welcome to https://github.com/xepozz/blogit 
 
 Blog link: https://dderepko.ru ⚡
 
