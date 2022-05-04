@@ -14,8 +14,6 @@ I want to start writing useful articles 📝 and that's why I developed CMS base
 
 🤔 I'm looking for help with developing CMS so if you want to contribute, you are welcome to https://github.com/xepozz/blogit 
 
-Blog link: https://dderepko.ru ⚡
-
 <!--
 **xepozz/xepozz** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
