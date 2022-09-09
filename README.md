@@ -2,8 +2,6 @@
 
 My name is Dmitry. 
 
-Currently, I'm living in Voronezh, Russian Federation 🇷🇺.
-
 I like to contribute to open source projects at my free time. Now I prefer [Yii 3](https://github.com/yiisoft).
 
 ### Projects
