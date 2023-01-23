@@ -14,6 +14,14 @@ It's an aggregated application based on React that helps you to both develop and
 
 The project will contain several application's frontends for Gii, Debug and Inspector modules.
 
+#### Test It!
+
+Source: https://github.com/xepozz/test-it
+
+A tool for generating files with tests cases based on class methods signatures.
+
+Great way to start tests writing. It will help you to have an addiction to write tests without doing routine tasks such as creating files, writing methods and test cases.
+
 #### Blogit
 
 Source: http://github.com/xepozz/blogit
