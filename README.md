@@ -13,6 +13,12 @@ Source: https://github.com/xepozz/internal-mocker
 The package helps mock internal php functions as simple as possible.
 This is easy way to mock such functions as: `time()`, `str_contains()`, `rand()`, etc.
 
+#### Remap
+
+Source: https://github.com/xepozz/remap
+
+The library allows you to map data from the database to objects.
+
 #### Yii Dev Panel
 
 Source: https://github.com/xepozz/yii-dev-panel (moved to [yiisoft/yii-dev-panel](https://github.com/yiisoft/yii-dev-panel))
