@@ -1,0 +1,15 @@
+funding:
+  - type: "custom"
+    platform: "Boosty"
+    url: "https://boosty.to/xepozz"
+    image: "https://images.boosty.to/user/442/avatar?change_time=1558443914&croped=1&mh=32&mw=32"
+
+  - type: "custom"
+    platform: "Patreon"
+    url: "https://patreon.com/xepozz"
+    image: "https://c5.patreon.com/external/favicon/rebrand/favicon-32.png?v=af5597c2ef"
+
+  - type: "custom"
+    platform: "Buy Me a Coffee"
+    url: "https://buymeacoffee.com/xepozz"
+    image: "https://studio.buymeacoffee.com/assets/img/bmc-meta-new/new/favicon.png"
