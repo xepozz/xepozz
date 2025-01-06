@@ -63,3 +63,6 @@ It's not maintained at the moment but you can develop your skills contibuting th
 - [Feature Flag](https://github.com/xepozz/feature-flag) - A simple library to enable/disable features based on a set of rules.
 - [Shortcut](https://github.com/xepozz/shortcut) - Sets of helper functions for rapid development of Yii 3 applications.
 
+##### Stats
+
+![](https://github-readme-stats.vercel.app/api?username=xepozz&show_icons=true)
