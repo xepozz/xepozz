@@ -1,14 +1,16 @@
 ### Become a sponsor
 
-[![Boost me](https://images.boosty.to/user/442/avatar?change_time=1558443914&croped=1&mh=32&mw=32) Boosty me](https://boosty.to/xepozz) <br>
-[![Patreon](https://c5.patreon.com/external/favicon/rebrand/favicon-32.png?v=af5597c2ef) Give me a Patron](https://patreon.com/xepozz) <br>
+[![Boost me](https://images.boosty.to/user/442/avatar?change_time=1558443914&croped=1&mh=32&mw=32) Boosty me](https://boosty.to/xepozz)
+|
+[![Patreon](https://c5.patreon.com/external/favicon/rebrand/favicon-32.png?v=af5597c2ef) Give me a Patron](https://patreon.com/xepozz)
+|
 [![Buy me a Coffee](https://studio.buymeacoffee.com/assets/img/bmc-meta-new/new/favicon.png) Buy me a Coffee](https://buymeacoffee.com/xepozz)
 
-At my free time I like to contribute [Yii3](https://github.com/yiisoft).
+Making [Yii3](https://github.com/yiisoft) be production ready.
 
 ### Projects
 
-#### MetaStorm PhpStorm Plugin
+#### MetaStorm PHPStorm Plugin
 
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/26121-meta-storm.svg)](https://plugins.jetbrains.com/plugin/26121-meta-storm)
 
@@ -17,6 +19,20 @@ Source: https://github.com/xepozz/meta-storm-idea-plugin
 Marketplace: https://plugins.jetbrains.com/plugin/26121-meta-storm/
 
 Must-have plugin for everyday work, it brings your IDE new life
+
+#### Buggregator IDE Plugin
+
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/26344-buggregator.svg)](https://plugins.jetbrains.com/plugin/26344-buggregator)
+
+Marketplace: https://plugins.jetbrains.com/plugin/26344-buggregator/
+
+Buggregator.dev IDE integration
+
+#### PHP-LSP IDE Plugin
+
+Repository: https://github.com/xepozz/php-lsp
+
+PHPStorm Language Server Protocol Integration
 
 #### Internal Mocker
 
