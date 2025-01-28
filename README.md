@@ -28,6 +28,16 @@ Marketplace: https://plugins.jetbrains.com/plugin/26344-buggregator/
 
 Buggregator.dev IDE integration
 
+#### Cron & Crontab Support IDE Plugin
+
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/26412-cron--crontab-support.svg)](https://plugins.jetbrains.com/plugin/26412-cron--crontab-support)
+
+Source: https://github.com/xepozz/crontab-intellij-plugin
+
+Marketplace: https://plugins.jetbrains.com/plugin/26412-cron--crontab-support/
+
+Syntax highlighting and code insights for Cron & Crontab Language
+
 #### PHP-LSP IDE Plugin
 
 Repository: https://github.com/xepozz/php-lsp
