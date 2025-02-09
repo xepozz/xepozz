@@ -10,39 +10,20 @@ Making [Yii3](https://github.com/yiisoft) be production ready.
 
 ### Projects
 
-#### MetaStorm PHPStorm Plugin
 
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/26121-meta-storm.svg)](https://plugins.jetbrains.com/plugin/26121-meta-storm)
+#### IDEA Plugins
 
-Source: https://github.com/xepozz/meta-storm-idea-plugin
+| Name                                                                                                                                                                                                                                       | Description                                                       | Links                                                                                                                                              |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| MetaStorm PHPStorm Plugin<br/> [![Downloads](https://img.shields.io/jetbrains/plugin/d/26121-meta-storm.svg)](https://plugins.jetbrains.com/plugin/26121-meta-storm)                                                                       | Must-have plugin for everyday work, it brings your IDE new life   | [Source](https://github.com/xepozz/meta-storm-idea-plugin) <br/> [Marketplace](https://plugins.jetbrains.com/plugin/26121-meta-storm/)             |
+| Cron & Crontab Support IDE Plugin<br/> [![Downloads](https://img.shields.io/jetbrains/plugin/d/26412-cron--crontab-support.svg)](https://plugins.jetbrains.com/plugin/26412-cron--crontab-support)                                         | Syntax highlighting and code insights for Cron & Crontab Language | [Source](https://github.com/xepozz/crontab-intellij-plugin) <br/> [Marketplace](https://plugins.jetbrains.com/plugin/26412-cron--crontab-support/) |
+| Buggregator IDE Plugin<br/> [![Downloads](https://img.shields.io/jetbrains/plugin/d/26344-buggregator.svg)](https://plugins.jetbrains.com/plugin/26344-buggregator)                                                                        | Buggregator.dev IDE integration                                   | [Marketplace](https://plugins.jetbrains.com/plugin/26344-buggregator/)                                                                             |
+| PHP-LSP IDE Plugin <br/>                                                                                                                                                                                                                   | PHP Language Server Protocol Integration                          | [Source](https://github.com/xepozz/php-lsp)                                                                                                        |
+| Git attributes support <br/>   [![Downloads](https://img.shields.io/jetbrains/plugin/d/26477--gitattributes-support.svg)](https://plugins.jetbrains.com/plugin/26477--gitattributes-support)                                             | Syntax highlighting and code insights for `.gitattributes` file   | [Marketplace](https://plugins.jetbrains.com/plugin/26477--gitattributes-support/)                                                                  |
+| Git codeowners support <br/>   [![Downloads](https://img.shields.io/jetbrains/plugin/d/26491-git-codeowners.svg)](https://plugins.jetbrains.com/plugin/26491-git-codeowners)                                                               | Syntax highlighting and code insights for `CODEOWNERS` file       | [Marketplace](https://plugins.jetbrains.com/plugin/26491-git-codeowners/)                                                                          |
+| Robots.txt support <br/>   [![Downloads](https://img.shields.io/jetbrains/plugin/d/26470-robots-txt.svg)](https://plugins.jetbrains.com/plugin/26470-robots-txt)                                                                           | Syntax highlighting and code insights for `robots.txt` file       | [Marketplace](https://plugins.jetbrains.com/plugin/26470-robots-txt/)                                                                              |
+| phplrt – PHP Language Recognition Tool <br/>   [![Downloads](https://img.shields.io/jetbrains/plugin/d/26474-php-language-recognition-tool-phplrt-.svg)](https://plugins.jetbrains.com/plugin/26474-php-language-recognition-tool-phplrt-) | phplrt language support (*.pp2)                                           | [Marketplace](https://plugins.jetbrains.com/plugin/26474-php-language-recognition-tool-phplrt-/)                                                   |
 
-Marketplace: https://plugins.jetbrains.com/plugin/26121-meta-storm/
-
-Must-have plugin for everyday work, it brings your IDE new life
-
-#### Buggregator IDE Plugin
-
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/26344-buggregator.svg)](https://plugins.jetbrains.com/plugin/26344-buggregator)
-
-Marketplace: https://plugins.jetbrains.com/plugin/26344-buggregator/
-
-Buggregator.dev IDE integration
-
-#### Cron & Crontab Support IDE Plugin
-
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/26412-cron--crontab-support.svg)](https://plugins.jetbrains.com/plugin/26412-cron--crontab-support)
-
-Source: https://github.com/xepozz/crontab-intellij-plugin
-
-Marketplace: https://plugins.jetbrains.com/plugin/26412-cron--crontab-support/
-
-Syntax highlighting and code insights for Cron & Crontab Language
-
-#### PHP-LSP IDE Plugin
-
-Repository: https://github.com/xepozz/php-lsp
-
-PHPStorm Language Server Protocol Integration
 
 #### Internal Mocker
 
